@@ -1,0 +1,111 @@
+*{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.gradient-background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100%;
+}
+.but {
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #4CAF50; /* Green border */
+  color: #4CAF50; /* Green text */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px; /* Curved ends */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.but:hover {
+  background-color: #4CAF50; /* Green background on hover */
+  color: white; /* White text on hover */
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Existing CSS for steps remains unchanged */
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.step {
+  width: 80%; /* Adjust width as needed */
+  margin-bottom: 50px; /* Add some margin between steps */
+  position: relative; /* Set position to relative */
+  display: flex; /* Use flexbox for positioning content */
+  flex-direction: column; /* Stack content vertically */
+  background-color: #f9f9f9; /* Background color for the step */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+  padding:20px;
+}
+
+.step:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  transform: scale(2.09); /* Slightly scale up the step on hover */
+}
+
+.step-left {
+  animation: bounceLeft 0.5s ease-in-out forwards;
+  left:0;
+  opacity: 0;
+}
+
+.step-right {
+   animation: bounceRight 0.5s ease-in-out forwards;
+ opacity: 0;
+  /* position: absolute; */
+  margin-left: 75%;
+  right: 0;
+ /* width: 50%;  */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .step,
+  .step-right {
+    margin-left: 0; /* Adjust width for smaller screens */
+  }
+}
+
+@keyframes bounceLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); /* Move the step from left to right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); /* Move the step from right to left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
